@@ -7,8 +7,8 @@
 </head>
 <body>
     <h1>Shreekrishna</h1>
-     {% for n in name  %}
-     <p>{{n}}</p>
-     {% endfor %}
+    {% for b in book %}
+    <p>{{forloop.counter}}{{b}}</p>
+    {% endfor %}
 </body>
 </html>
