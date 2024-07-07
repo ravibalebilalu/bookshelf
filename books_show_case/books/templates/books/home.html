@@ -1,14 +1,44 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'books/style.css'%}">
     <title>Home</title>
 </head>
 <body>
-    <h1>Shreekrishna</h1>
+    <!-------------------------------------------------------------------->
+    <ul id="navbar">
+        <li> <a href="{% url 'index' %}">Home</a></li>
+        <li> <a href="{% url 'authors' %}">Authors</a></li>
+        <li>Languags</li>
+    </ul>
+    <h1 id="krish">Shreekrishna</h1>
+   <div class="bookbox">
     {% for b in book %}
-    <p>{{forloop.counter}}{{b}}</p>
+    <div class="showbook">
+     
+   <div class="bookimage">
+    <div class="image">
+        <p class="book-title"> {{b.booktitle}}</p>
+        <p class="book-authors">{{b.bookauthors}}</p>
+    </div>
+     
+     
+   </div>
+   <div class="bookdetails">
+    <p class="bookTitle"><b> Title</b> : {{b.booktitle}}</p>
+    <p class="bookAuthors"><b> Authors</b> : {{b.bookauthors}}</p>
+    <p class="bookPages"><b>Pages : </b>{{b.bookpages}}</p>
+    <p class="bookRatings"><b>Ratings: </b>{{b.bookrating}}</p>
+    <p class="publishedDate"><b>Published Date :</b>{{b.book_publication_date}}</p>
+    <p class="bookPublisher"><b>Publisher : </b>{{b.book_publisher}}</p>
+   </div>
+     
+    </div> 
     {% endfor %}
+   </div>
+   <!-------------------------------------------------------------------->
 </body>
 </html>

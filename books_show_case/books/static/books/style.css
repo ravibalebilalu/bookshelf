@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(19, 30, 30);
+    color: aliceblue;
+    margin: 0px 100px;
+
+}
+
+#krish {
+    text-align: center;
+    color: blue;
+    margin: 30px;
+    font-size: 50px;
+    text-shadow: 1px 1px rgb(132, 122, 122);
+    box-shadow: 3px 3px 50px green;
+    border-radius: 10px;
+}
+
+.bookbox {
+    display: flex;
+    flex-direction: column;
+}
+
+.showbook {
+    border: 3px solid white;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.bookimage {
+    height: 400px;
+    width: 300px;
+    background-color: chocolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+.bookdetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image {
+    height: 300px;
+    width: 200px;
+    background-color: teal;
+    border-radius: 3%;
+    border: 5px solid black;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.book-title {
+    color: brown;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.book-authors {
+    color: white;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.bookTitle {
+    color: rgb(12, 155, 207);
+    font-size: 25px;
+    padding: 5px;
+    margin: 10px;
+
+}
+
+.bookAuthors {
+    color: rgb(148, 24, 88);
+    font-weight: 600;
+    font-size: 20px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.bookPages {
+    color: rgb(139, 140, 143);
+    font-weight: 600;
+    font-size: 20px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.bookRatings {
+    color: rgb(133, 233, 118);
+    font-weight: 600;
+    font-size: 20px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.publishedDate {
+    color: rgb(168, 232, 225);
+    font-weight: 600;
+    font-size: 20px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.bookPublisher {
+    color: rgb(185, 99, 99);
+    font-weight: 600;
+    font-size: 20px;
+    padding: 5px;
+    margin: 10px;
+}
+
+#navbar {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#navbar li {
+    margin-right: 50px;
+    margin-top: 20px;
+
+}
+
+a {
+
+    text-decoration: none;
+}
