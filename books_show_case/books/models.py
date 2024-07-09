@@ -45,3 +45,7 @@ class Book(models.Model):
 
 
  
+    """
+    bookid booktitle bookauthors bookrating bookisbn bookisbn13 book_language_code bookpages book_rating_counts 
+    book_text_reviews_count book_publication_date book_publisher 
+    """

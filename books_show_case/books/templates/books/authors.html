@@ -1,20 +1,12 @@
-  {% load static %}
+{% extends "books/base.html" %} {% block content %}
+<!-------------------------------------------------->
+<div id="krish">Shreekrishna</div>
 
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'books/style.css'%}">
-  </head>
-  <body>
-    <div id="krish">Shreekrishna</div>
+{% for author in authors %}
+<div class="authorname">
+    <p>{{author.bookauthors}}</p>
+</div>
+{% endfor %}
 
-  {% for author in books %}
-  <p>{{author.bookauthors}}</p>
-  {% endfor %}
-
-
-  </body>
-  </html>
+<!-------------------------------------------------->
+{% endblock content %}

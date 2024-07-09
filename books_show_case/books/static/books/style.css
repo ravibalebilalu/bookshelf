@@ -135,10 +135,28 @@ body {
 #navbar li {
     margin-right: 50px;
     margin-top: 20px;
+    background-color: white;
 
 }
 
 a {
 
     text-decoration: none;
+}
+
+/*----------------------------------*/
+.authorname {
+    display: flex;
+
+    justify-content: flex-start;
+
+}
+
+.authorname p {
+    font-size: 30px;
+    color: rgb(237, 129, 52);
+}
+
+.filter-layout {
+    border: 1.4px solid green;
 }
