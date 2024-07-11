@@ -2,11 +2,27 @@
 <!-------------------------------------------------->
 <div id="krish">Shreekrishna</div>
 
-{% for author in authors %}
-<div class="authorname">
-    <p>{{author.bookauthors}}</p>
-</div>
-{% endfor %}
+<h1>Authors and Their Books</h1>
+<ul>
+    {% for author in authors %}
+
+    <div class="author-seperator">
+        <li>
+            <p>
+                <strong class="author-author"
+                    >{{ author.bookauthors }} :</strong
+                >
+            </p>
+            <ul>
+                {% for title in author.booktitles %}
+                <li class="author-title">{{ title }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    </div>
+
+    {% endfor %}
+</ul>
 
 <!-------------------------------------------------->
 {% endblock content %}

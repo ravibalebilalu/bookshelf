@@ -130,12 +130,14 @@ body {
     list-style: none;
     display: flex;
     justify-content: flex-end;
+    position: fixed;
+    background-color: white;
 }
 
 #navbar li {
     margin-right: 50px;
     margin-top: 20px;
-    background-color: white;
+     
 
 }
 
@@ -159,4 +161,22 @@ a {
 
 .filter-layout {
     border: 1.4px solid green;
+}
+ ul{
+    list-style: none;
+ }
+.author-title{
+    font-size: 20px;
+    color: rgb(18, 132, 61);
+}
+.author-author{
+    font-size: 30px;
+    color: rgba(234, 64, 243, 0.544);
+
+     
+}
+
+.author-seperator{
+     margin-bottom: 50px;
+     
 }
