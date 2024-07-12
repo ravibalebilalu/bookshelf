@@ -7,14 +7,25 @@
 body {
     background-color: rgb(19, 30, 30);
     color: aliceblue;
-    margin: 0px 100px;
+    margin: 0px 60px;
 
+}
+.otherlinks{
+    width: 92%;
+    height: 50px;
+    display: flex;
+    justify-content:flex-end;
+    align-items: center;
+     position: fixed;
+     background-color: rgb(44, 61, 44);
+      
+      
 }
 
 #krish {
     text-align: center;
     color: blue;
-    margin: 30px;
+      
     font-size: 50px;
     text-shadow: 1px 1px rgb(132, 122, 122);
     box-shadow: 3px 3px 50px green;
@@ -130,13 +141,17 @@ body {
     list-style: none;
     display: flex;
     justify-content: flex-end;
-    position: fixed;
-    background-color: white;
+     
+     
+     
 }
 
 #navbar li {
-    margin-right: 50px;
-    margin-top: 20px;
+    margin-right: 100px;
+    margin-top: 0px;
+    color: white;
+    font-size: 25px;
+    text-align: center;
      
 
 }
@@ -144,6 +159,8 @@ body {
 a {
 
     text-decoration: none;
+    color: white;
+     
 }
 
 /*----------------------------------*/

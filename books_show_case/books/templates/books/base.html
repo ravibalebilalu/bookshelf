@@ -8,11 +8,14 @@
         <link rel="stylesheet" href="{% static 'books/style.css' %}" />
     </head>
     <body>
-        <ul id="navbar">
-            <li><a href="{% url 'index' %}">Home</a></li>
-            <li><a href="{% url 'authors' %}">Authors</a></li>
-            <li><a href="{% url 'filters' %}">Filters</a></li>
-        </ul>
+        <div class="otherlinks">
+            <ul id="navbar">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'authors' %}">Authors</a></li>
+                <li><a href="{% url 'filters' %}">Filters</a></li>
+            </ul>
+        </div>
+
         {% block content %} {% endblock content %}
     </body>
 </html>
