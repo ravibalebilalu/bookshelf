@@ -15,7 +15,9 @@
             </p>
             <ul>
                 {% for title in author.booktitles %}
-                <li class="author-title">{{ title }}</li>
+                <li class="author-title">
+                    <a href="{{title.url}}">{{ title.title }}</a>
+                </li>
                 {% endfor %}
             </ul>
         </li>

@@ -17,7 +17,9 @@ body {
     justify-content:flex-end;
     align-items: center;
      position: fixed;
+     top: 0;
      background-color: rgb(44, 61, 44);
+      z-index: 1000;
       
       
 }
@@ -30,6 +32,13 @@ body {
     text-shadow: 1px 1px rgb(132, 122, 122);
     box-shadow: 3px 3px 50px green;
     border-radius: 10px;
+    margin-top: 60px;
+     
+}
+#filter-heading{
+    color: blueviolet;
+    text-align: center;
+    margin-top: 50px;
 }
 
 .bookbox {
@@ -196,4 +205,14 @@ a {
 .author-seperator{
      margin-bottom: 50px;
      
+}
+
+.details-in-book-details{
+    margin-top: 100px;
+    
+}
+
+.details-in-book-details .bookTitle{
+    font-size: 40px;
+    font-weight: 800;
 }

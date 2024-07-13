@@ -1,0 +1,16 @@
+{% extends "books/base.html" %} {% block content %}
+
+<div class="details-in-book-details">
+    <div class="bookdetails">
+        <p class="bookTitle">{{book.booktitle}}</p>
+        <p class="bookAuthors"><b> Authors</b> : {{book.bookauthors}}</p>
+        <p class="bookPages"><b>Pages : </b>{{book.bookpages}}</p>
+        <p class="bookRatings"><b>Ratings: </b>{{book.bookrating}}</p>
+        <p class="publishedDate">
+            <b>Published Date :</b>{{book.book_publication_date}}
+        </p>
+        <p class="bookPublisher"><b>Publisher : </b>{{book.book_publisher}}</p>
+    </div>
+</div>
+
+{% endblock content %}
