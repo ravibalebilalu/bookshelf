@@ -2,4 +2,33 @@
 
 <h1 id="filter-heading">Filter</h1>
 
+<form action="{% url 'filters'   %}" method="get">
+    <!-------------------------------------------------------->
+    <button type="submit" name="filter" value="alphabatic">
+        Filter by Alphabatically
+    </button>
+    <!-------------------------------------------------------->
+    <button type="submit" name="filter" value="rating-h2l">
+        Rating High to Low
+    </button>
+    <!-------------------------------------------------------->
+    <button type="submit" name="filter" value="rating-l2h">
+        Rating Low to High
+    </button>
+    <!-------------------------------------------------------->
+
+    <button type="submit" name="filter" value="numberOfPagesl2h">
+        Number of Pages Low to High
+    </button>
+    <!-------------------------------------------------------->
+    <button type="submit" name="filter" value="numberOfPagesh2l">
+        Number of Pages High to Low
+    </button>
+    <!-------------------------------------------------------->
+</form>
+<ul>
+    {% for book in entries %}
+    <p>{{book.booktitle}}{{book.bookrating}} {{book.bookpages}}</p>
+    {% endfor %}
+</ul>
 {% endblock content %}

@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,get_object_or_404,redirect
 from django.http import HttpResponse
 from django.template import loader
 from books.models import Book
@@ -56,9 +56,21 @@ def filters(request):
 
     
     all_entries = Book.objects.all()
-     
+    filter_by = request.GET.get("filter")
+    
+    if filter_by == "alphabatic":
+        all_entries = all_entries.order_by("booktitle")
+    elif filter_by == "rating-h2l":
+        all_entries = all_entries.order_by("-bookrating")
+    elif filter_by == "rating-l2h":
+        all_entries = all_entries.order_by("bookrating")
+    elif filter_by == "numberOfPagesl2h":
+        all_entries = all_entries.order_by("bookpages")
+    elif filter_by == "numberOfPagesh2l":
+        all_entries = all_entries.order_by("-bookpages")
      
     context = {
          "entries": all_entries
     }
     return HttpResponse(template.render(context, request))
+ 
