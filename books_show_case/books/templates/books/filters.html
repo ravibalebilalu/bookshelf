@@ -50,13 +50,22 @@
         Pages High to Low
     </button>
     <!-------------------------------------------------------->
-    <label for="language">Language</label>
-    <select name="language" id="language">
-        {% for code,l in lang_dict.items %}
-        <option value="{{code}}">{{l}}</option>
-        {% endfor %}
-    </select>
-    <button type="submit" name="filter" value="selectlang">Select</button>
+    <div class="langselection">
+        <label style="display: block" for="language">Choose Language :</label>
+        <select name="language" id="language">
+            {% for code,l in lang_dict.items %}
+            <option value="{{code}}">{{l}}</option>
+            {% endfor %}
+        </select>
+        <button
+            class="langselectbutton"
+            type="submit"
+            name="filter"
+            value="selectlang"
+        >
+            Select
+        </button>
+    </div>
     <!-------------------------------------------------------->
 </form>
 
@@ -64,9 +73,11 @@
     {% for book in entries %}
     <p class="filter-title">{{book.booktitle}}</p>
     {% if flag == "rating" %}
-    <p>{{book.bookrating}}</p>
-    {% elif flag == "pages" %}
-    <p>{{book.bookpages}}</p>
-    {% endif %} {% endfor %}
+    <p>Ratings : {{book.bookrating}}</p>
+    {% elif flag == "pages" %} {% if book.bookpages == 0 %}
+    <p>Not available</p>
+    {% else %}
+    <p>Pages : {{book.bookpages}}</p>
+    {% endif %} {% endif %} {% endfor %}
 </ul>
 {% endblock content %}

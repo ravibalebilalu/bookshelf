@@ -254,3 +254,21 @@ color: green;
     padding: 5px;
     color: bisque;
 }
+
+.langselection{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+       color: green;
+       font-size: 30px;
+       margin-top:30px ;
+}
+select{
+    font-size: 20px;
+    padding: 10px;
+}
+.langselectbutton{
+    font-size: 20px;
+    padding: 10px;
+}
