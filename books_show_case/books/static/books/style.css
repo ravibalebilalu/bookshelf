@@ -216,3 +216,41 @@ a {
     font-size: 40px;
     font-weight: 800;
 }
+.filterform{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    
+    justify-content: space-around;
+}
+
+.formbutton{
+    padding: 5px;
+font-size: 2rem;
+}
+.alphabutton{
+color: green;
+ 
+}
+.ratingh2l{
+    color: blueviolet;
+    
+}
+.ratingl2h{
+    color: brown;
+    
+}
+.pagesl2h{
+    color: brown;
+    
+}
+
+.pagesh2l{
+    color: rgb(116, 12, 43);
+    
+}
+
+.filter-title{
+    padding: 5px;
+    color: bisque;
+}

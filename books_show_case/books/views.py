@@ -54,23 +54,71 @@ def book_details(request,book_id):
 def filters(request):
     template = loader.get_template("books/filters.html")
 
-    
+    lang = ['eng', 'en-US', 'fre', 'spa', 'en-GB', 'mul', 'grc', 'enm','en-CA', 'ger', 'jpn', 'ara', 'nl', 'zho', 'lat', 'por', 'srp','ita', 'rus', 'msa', 'glg', 'wel', 'swe', 'nor', 'tur', 'gla','ale']
+    lang_dict = {
+    'eng': 'English',
+    'en-US': 'English (US)',
+    'fre': 'French',
+    'spa': 'Spanish',
+    'en-GB': 'English (UK)',
+    'mul': 'Multiple languages',
+    'grc': 'Ancient Greek',
+    'enm': 'Middle English',
+    'en-CA': 'English (Canada)',
+    'ger': 'German',
+    'jpn': 'Japanese',
+    'ara': 'Arabic',
+    'nl': 'Dutch',
+    'zho': 'Chinese',
+    'lat': 'Latin',
+    'por': 'Portuguese',
+    'srp': 'Serbian',
+    'ita': 'Italian',
+    'rus': 'Russian',
+    'msa': 'Malay',
+    'glg': 'Galician',
+    'wel': 'Welsh',
+    'swe': 'Swedish',
+    'nor': 'Norwegian',
+    'tur': 'Turkish',
+    'gla': 'Scottish Gaelic',
+    'ale': 'Aleut'
+}
+
+    flag=""
     all_entries = Book.objects.all()
     filter_by = request.GET.get("filter")
+    selected_language = request.GET.get("language")
+    print(selected_language)
     
     if filter_by == "alphabatic":
         all_entries = all_entries.order_by("booktitle")
-    elif filter_by == "rating-h2l":
+         
+    elif filter_by == "ratingh2l":
         all_entries = all_entries.order_by("-bookrating")
+        flag="rating"
     elif filter_by == "rating-l2h":
         all_entries = all_entries.order_by("bookrating")
+        flag="rating"
     elif filter_by == "numberOfPagesl2h":
         all_entries = all_entries.order_by("bookpages")
+        flag="pages"
     elif filter_by == "numberOfPagesh2l":
         all_entries = all_entries.order_by("-bookpages")
+        flag="pages"
+     
+    if selected_language:
+        all_entries = all_entries.filter(book_language_code=selected_language)
      
     context = {
-         "entries": all_entries
+         "entries": all_entries,
+         "flag":flag,
+         "lang":lang,
+         "lang_dict":lang_dict
     }
     return HttpResponse(template.render(context, request))
+
+
+
+
  
