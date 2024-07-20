@@ -26,4 +26,33 @@
     {% endfor %}
 </div>
 
+<nav class="page-navigation">
+    <ul class="pagination">
+        {% if book.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="/?page={{book.previous_page_number}}"
+                >Previous</a
+            >
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="/?page=1">First</a>
+        </li>
+        {% endif %} {% for i in total_page_list %}
+        <li class="page-item {% if book.number == i %}active{% endif %}">
+            <a class="page-link" href="/?page={{i}}">{{i}}</a>
+        </li>
+        {% endfor %} {% if book.has_next %}
+
+        <li class="page-item">
+            <a class="page-link" href="/?page={{book.next_page_number}}"
+                >Next</a
+            >
+        </li>
+        <li class="page-item">
+            <a class="page-link" href="/?page={{last_page}}">Last</a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+
 {% endblock content %}

@@ -73,11 +73,26 @@
     {% for book in entries %}
     <p class="filter-title">{{book.booktitle}}</p>
     {% if flag == "rating" %}
-    <p>Ratings : {{book.bookrating}}</p>
-    {% elif flag == "pages" %} {% if book.bookpages == 0 %}
+
+    <p>Ratings :{{book.bookrating}}</p>
+
+    {% if book.bookrating > 4 %}
+    <h4>⭐️⭐️⭐️⭐️⭐️</h4>
+    {% elif book.bookrating > 3 %}
+    <h4>⭐️⭐️⭐️⭐️🟡️</h4>
+    {% elif book.bookrating > 2 %}
+    <h4>⭐️⭐️⭐️🟡️🟡️</h4>
+    {% elif book.bookrating > 1 %}
+    <h4>⭐️⭐️🟡️🟡️🟡️</h4>
+    {% elif book.bookrating > 0 %}
+    <h4>⭐️🟡️🟡️🟡️🟡️</h4>
+    {% elif book.bookrating == 0 %}
+    <h4>🟡️🟡️🟡️🟡️🟡️</h4>
+    {% endif %} {% elif flag == "pages" %} {% if book.bookpages == 0 %}
     <p>Not available</p>
     {% else %}
     <p>Pages : {{book.bookpages}}</p>
     {% endif %} {% endif %} {% endfor %}
 </ul>
 {% endblock content %}
+<!  ⭐️⭐️⭐️⭐️⭐️>

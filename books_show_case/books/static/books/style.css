@@ -272,3 +272,30 @@ select{
     font-size: 20px;
     padding: 10px;
 }
+.zerostar{
+     
+}
+.pagination{
+    display: flex;
+    margin-top: 20px;
+     
+}
+.page-navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     
+}
+.page-link{
+    margin-left: 10px;
+    color: green;
+    border: 1px solid rgb(48, 84, 155);
+    padding: 5px; 
+     
+}
+ .page-item.active .page-link{
+    color: white;
+    background-color: green;
+}
+
+ 

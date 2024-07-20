@@ -5,12 +5,20 @@ from books.models import Book
 from datetime import datetime
 from collections import defaultdict
 from django.urls import reverse
+from django.core.paginator import Paginator
 
 
 def index(request):
     book = Book.objects.all()[:100]
+    paginator = Paginator(book,10)
+    page_number = request.GET.get("page")
+    book_final = paginator.get_page(page_number)
+    total_page = book_final.paginator.num_pages
+    total_page_list = [i+1 for i in range(total_page)]
     context = {
-        "book":book
+        "book":book_final,
+        "last_page":total_page,
+        "total_page_list":total_page_list
     }
     template = loader.get_template("books/home.html")
     return HttpResponse(template.render(context,request))
