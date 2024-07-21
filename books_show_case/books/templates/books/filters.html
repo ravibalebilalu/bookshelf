@@ -1,6 +1,6 @@
 {% extends "books/base.html" %} {% block content %}
 
-<h1 id="filter-heading">Filter</h1>
+<h1 id="filter-heading">Filters</h1>
 
 <form class="filterform" action="{% url 'filters'   %}" method="get">
     <!-------------------------------------------------------->
@@ -53,6 +53,7 @@
     <div class="langselection">
         <label style="display: block" for="language">Choose Language :</label>
         <select name="language" id="language">
+            <!--Dict used to ensure human readablity of Language codes -->
             {% for code,l in lang_dict.items %}
             <option value="{{code}}">{{l}}</option>
             {% endfor %}

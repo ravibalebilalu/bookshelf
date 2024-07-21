@@ -9,11 +9,16 @@ from django.core.paginator import Paginator
 
 
 def index(request):
+    #all book data (took 100)
     book = Book.objects.all()[:100]
+    #set paginator for 10 books per page
     paginator = Paginator(book,10)
+    #get page number
     page_number = request.GET.get("page")
+    #data = 10 books per page
     book_final = paginator.get_page(page_number)
     total_page = book_final.paginator.num_pages
+    #list of page numbers
     total_page_list = [i+1 for i in range(total_page)]
     context = {
         "book":book_final,
@@ -24,29 +29,30 @@ def index(request):
     return HttpResponse(template.render(context,request))
 
 def authors(request):
+    #all data alphabatically sorted by author name
     books = Book.objects.all().order_by('bookauthors')
     author_books = defaultdict(list)  
 
     for book in books:
-        authors_list = book.bookauthors.split('/')   
+        #seperates author names if multiple
+        authors_list = book.bookauthors.split('/') 
+        # defaultdict structure: bookauthor [{'title': "booktitle, 'url': '/book/bookid/'}]  
         for author in authors_list:
             author_books[author.strip()].append({"title":book.booktitle,"url":reverse("book_details",args=[book.id])})
-    
+    #set variables
     context = {
         "authors": [{"bookauthors": author, "booktitles": titles} for author, titles in author_books.items()]
     }
+     
     return render(request, "books/authors.html", context)
 
-"""
-    bookid booktitle bookauthors bookrating bookisbn bookisbn13 book_language_code bookpages book_rating_counts 
-    book_text_reviews_count book_publication_date book_publisher 
-    """
-
+ 
+    
 
 def book_details(request,book_id):
-    print("shreekrishna")
+    #select book according to id
     book = Book.objects.get(id=book_id)
-    print(book)
+     
     context = {"book":book}
 
     template = loader.get_template("books/book_details.html")
@@ -62,7 +68,7 @@ def book_details(request,book_id):
 def filters(request):
     template = loader.get_template("books/filters.html")
 
-    lang = ['eng', 'en-US', 'fre', 'spa', 'en-GB', 'mul', 'grc', 'enm','en-CA', 'ger', 'jpn', 'ara', 'nl', 'zho', 'lat', 'por', 'srp','ita', 'rus', 'msa', 'glg', 'wel', 'swe', 'nor', 'tur', 'gla','ale']
+    
     lang_dict = {
     'eng': 'English',
     'en-US': 'English (US)',
@@ -121,7 +127,7 @@ def filters(request):
     context = {
          "entries": all_entries,
          "flag":flag,
-         "lang":lang,
+         
          "lang_dict":lang_dict
     }
     return HttpResponse(template.render(context, request))
